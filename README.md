@@ -44,4 +44,6 @@ This is an artistic 3D representation, not a measured simulation. Particle count
 - Constellation and stellar data: https://github.com/ofrohn/d3-celestial — see `licenses/d3-celestial.txt`.
 - M82 reference image and soundtrack supplied by the user. Their inclusion does not establish redistribution rights.
 
-This repository is local. No remote is configured.
+GitHub repository: https://github.com/prabhavrao23/aether
+
+The repository is private. The local `main` branch tracks `origin/main`.
