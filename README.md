@@ -46,4 +46,4 @@ This is an artistic 3D representation, not a measured simulation. Particle count
 
 GitHub repository: https://github.com/prabhavrao23/aether
 
-The repository is private. The local `main` branch tracks `origin/main`.
+[Play ÆTHER on GitHub Pages](https://prabhavrao23.github.io/aether/). The site is served from the `gh-pages` branch.
