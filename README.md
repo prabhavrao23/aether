@@ -29,6 +29,12 @@ The runtime data is currently embedded in `src/app.js` for offline compatibility
 
 Choose a constellation and press GO. Drag to orbit, scroll to zoom, and Shift-drag to pan. Whole Galaxy zooms out; Go Back to Constellation returns to its viewing angle. Back or Escape returns to the main screen. Soundtrack playback begins after user interaction and loops; Pause stops animation and audio. Settings contains atmosphere choices and a local audio file picker.
 
+## Solar System tour
+
+Select **View the Solar System** from the galaxy landing page. Select a body on the orbit map or in the destination list. Orbit periods are approximate, the Moon revolves around Earth, and the simulation uses arbitrary starting positions and exaggerated sizes and distances.
+
+Rocky worlds use credited mission imagery. Jupiter, Saturn, Uranus, and Neptune provide illustrated cloud views and simplified interior diagrams based on linked NASA references. Earth descends in three stages from the globe to the New York region and a NASA astronaut photograph of Manhattan.
+
 ## Checks
 
 ```sh

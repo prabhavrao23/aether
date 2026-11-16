@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check src/app.js",
+    "check": "node --check src/app.js && node --check src/solar.js",
     "start": "npm run build && python3 -m http.server 8000 --bind 127.0.0.1 --directory dist"
   }
 }
