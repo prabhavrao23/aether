@@ -1,4 +1,4 @@
-# ÆTHER
+# Prabhav
 
 An interactive, school-friendly galaxy experience with 88 constellation patterns, selectable atmosphere colors, animated constellation journeys, and looping audio.
 
@@ -29,12 +29,6 @@ The runtime data is currently embedded in `src/app.js` for offline compatibility
 
 Choose a constellation and press GO. Drag to orbit, scroll to zoom, and Shift-drag to pan. Whole Galaxy zooms out; Go Back to Constellation returns to its viewing angle. Back or Escape returns to the main screen. Soundtrack playback begins after user interaction and loops; Pause stops animation and audio. Settings contains atmosphere choices and a local audio file picker.
 
-## Solar System tour
-
-Select **View the Solar System** from the galaxy landing page. Select a body on the orbit map or in the destination list. Orbit periods are approximate, the Moon revolves around Earth, and the simulation uses arbitrary starting positions and exaggerated sizes and distances.
-
-Rocky worlds use credited mission imagery. Jupiter, Saturn, Uranus, and Neptune provide illustrated cloud views and simplified interior diagrams based on linked NASA references. Earth descends in three stages from the globe to the New York region and a NASA astronaut photograph of Manhattan.
-
 ## Checks
 
 ```sh
@@ -50,6 +44,14 @@ This is an artistic 3D representation, not a measured simulation. Particle count
 - Constellation and stellar data: https://github.com/ofrohn/d3-celestial — see `licenses/d3-celestial.txt`.
 - M82 reference image and soundtrack supplied by the user. Their inclusion does not establish redistribution rights.
 
-GitHub repository: https://github.com/prabhavrao23/aether
+GitHub repository: https://github.com/prabhavrao23/prabhav
 
-[Play ÆTHER on GitHub Pages](https://prabhavrao23.github.io/aether/). The site is served from the `gh-pages` branch.
+[Open Prabhav on GitHub Pages](https://prabhavrao23.github.io/prabhav/). The site is served from the `gh-pages` branch.
+
+## Local Solar System preview
+
+Run `npm start`, then open http://127.0.0.1:8000 and choose **View the Solar System**. Drag to orbit, scroll/pinch to zoom, right-drag or use two fingers to pan. Select a sphere or a planet name for an isolated, rotatable view, description, and fun fact. Includes all eight planets, the Sun, and Earth’s Moon. Pause also pauses the soundtrack.
+
+This is an educational visualization, not an ephemeris. Sizes and distances are illustrative; circular orbits preserve period ratios at one Earth year per 20 minutes of animation. Textures and dependencies are bundled locally. See `licenses/solar-system-scope.md` and `src/vendor/LICENSE.txt`.
+
+Changes must be tested locally and reviewed by the owner before any commit, push, or publication.

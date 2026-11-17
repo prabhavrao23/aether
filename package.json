@@ -1,12 +1,12 @@
 {
-  "name": "aether-galaxy",
+  "name": "prabhav",
   "version": "1.0.0",
   "private": true,
-  "description": "\u00c6THER \u2014 an interactive galaxy and constellation experience",
+  "description": "Prabhav Rao\u2019s portfolio and interactive galaxy",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check src/app.js && node --check src/solar.js",
+    "check": "node --check src/app.js && node --check src/solar.js && node --check src/surface-effects.js && node --check src/portfolio.js && node --check src/home.js",
     "start": "npm run build && python3 -m http.server 8000 --bind 127.0.0.1 --directory dist"
   }
 }
