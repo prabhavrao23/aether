@@ -1,51 +1,24 @@
-.solar-launch{display:block;margin:16px auto 0;border-color:#ccdeff65;background:#080e22b0;color:#ddeaff;padding:14px 18px}
-.solar-launch span{margin-left:.5em}
-#solar[hidden],#solar [hidden]{display:none!important}
-#solar{position:fixed;inset:0;z-index:24;display:flex;flex-direction:column;overflow:auto;color:#f4f1e9;background:#030713 radial-gradient(ellipse at 52% 47%,#182442 0%,#081027 41%,#030713 75%);font:14px/1.5 Arial,sans-serif}
-body.solar-open #sky{transition:transform .85s cubic-bezier(.48,.03,.29,1);transform:scale(5)}
-#solar.solar-arrival{animation:solar-arrival .95s ease both}
-@keyframes solar-arrival{0%,30%{opacity:0}100%{opacity:1}}
-.solar-top{position:relative;z-index:2;display:flex;gap:10px;justify-content:space-between;align-items:center;padding:16px clamp(12px,4vw,55px);border-bottom:1px solid #a8c9ff25;background:#040814c9;font-size:11px;letter-spacing:1px}
-.solar-top button{letter-spacing:0;text-transform:none;white-space:nowrap}
-.solar-divider{color:#7d98c2;padding:0 .35em}
-.solar-orbit-view{position:relative;display:grid;grid-template-rows:auto minmax(300px,1fr) auto;flex:1}
-.solar-intro{text-align:center;padding:18px 12px 0;position:relative;z-index:1}
-.solar-eyebrow{font:600 10px/1.5 Arial,sans-serif!important;letter-spacing:.23em;color:#abbfe3!important;margin:0 0 8px}
-#solar h2{font:normal clamp(36px,6vw,76px)/1.02 Georgia,serif;margin:0;letter-spacing:-.045em}
-.solar-intro p:last-child{font:14px Arial,sans-serif;margin:10px 0 0;color:#c1cce3}
-.orbit-map{--flat:.62;position:relative;overflow:hidden;min-height:300px;background:radial-gradient(ellipse at center,#ffb96e18,transparent 48%)}
-.orbit-ring{position:absolute;left:50%;top:50%;border-radius:50%;border:1px solid #b3cfff39;transform:translate(-50%,-50%);pointer-events:none}
-.orbit-point{position:absolute;transform:translate(-50%,-50%);z-index:1;padding:0!important;border:0;background:none!important;display:grid;place-items:center;min-height:34px;min-width:34px;letter-spacing:0;overflow:visible}
-.orbit-point::before,.fly-globe{content:'';display:block;width:var(--orb-size);height:var(--orb-size);border-radius:50%;background:var(--orb-paint);box-shadow:0 0 15px var(--orb-glow);flex:none}
-.orbit-point:focus-visible,.orbit-point:hover{z-index:5}
-.orbit-point:hover::before{outline:1px solid white;outline-offset:4px}
-.orbit-point span{position:absolute;top:calc(50% + var(--orb-size)/2 + 3px);left:50%;translate:-50%;color:#e1e9ff;text-shadow:0 1px 5px #000,0 0 3px #000;white-space:nowrap;font:11px Arial}
-.orbit-point[data-world=saturn]::after{content:'';position:absolute;width:36px;height:12px;border:2px solid #dbc58b99;border-radius:50%;rotate:-18deg;pointer-events:none}
-.orbit-footer{padding:12px 14px 20px;text-align:center;position:relative;z-index:2}
-#world-list,.orbit-controls,#world-steps{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;align-items:center}
-#world-list button,#world-steps button{padding:9px 12px;letter-spacing:0;background:#101b34d9;text-transform:none;font-size:12px}
-.orbit-controls{margin-top:12px;color:#bac7df;font-size:11px;gap:12px}
-.orbit-controls button{letter-spacing:0;padding:7px 12px}
-.orbit-controls select{width:auto;padding:6px;min-width:0;font-size:11px}
-#world-view{position:relative;flex:1;min-height:470px;display:flex;align-items:end;isolation:isolate;overflow:hidden;background:#050912}
-#world-scene,#world-photo,#world-clouds,#world-cutaway{position:absolute;inset:0}
-#world-scene{overflow:hidden;z-index:-1;background:#050912}
-#world-photo{width:100%;height:100%;object-fit:cover;object-position:center}
-#world-photo[data-stage=earth]{object-fit:contain}
-#world-scene::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#020510 0%,#020510d9 20%,transparent 68%);pointer-events:none}
-#world-photo.scene-change,#world-clouds.scene-change,#world-cutaway.scene-change{animation:world-closeup 1.25s cubic-bezier(.2,.68,.26,1) both}
-@keyframes world-closeup{from{transform:scale(.78);opacity:.22}to{transform:scale(1);opacity:1}}
-.world-information{padding:24px clamp(18px,5vw,72px) 28px;width:min(710px,100%);text-shadow:0 2px 5px #000}
-.world-information>p:not(.solar-eyebrow){font:16px/1.55 Arial,sans-serif;color:#eef2fa;margin:12px 0}
-#world-layers{list-style:none;margin:10px 0;padding:0;font-size:13px}
-#world-layers li::before{content:'●';color:var(--key);margin-right:.65em}
-#world-steps{justify-content:start;margin:14px 0}
-#world-steps button[aria-pressed=true]{background:#e9f1ff;color:#0a132c}
-#world-credit{color:#c2d6ff;font-size:12px}
-.cloud-bands{position:absolute;inset:-15%;background:repeating-linear-gradient(170deg,transparent 0 8%,var(--cloud) 12%,transparent 25%),radial-gradient(ellipse at 57% 47%,var(--storm),var(--cloud) 12%,transparent 33%),linear-gradient(155deg,var(--top),var(--deep));filter:contrast(1.16);animation:cloud-drift 18s alternate ease-in-out infinite}
-.cloud-bands::after{content:'';position:absolute;inset:0;background:repeating-radial-gradient(ellipse at 58% 48%,transparent 0 5%,#ffffff12 5.4% 6%,transparent 7% 11%);mix-blend-mode:screen}
-@keyframes cloud-drift{to{transform:translate(6%,-3%) scale(1.12)}}
-.cutaway-orb{position:absolute;left:66%;top:41%;translate:-50% -50%;width:min(65vw,55vh);aspect-ratio:1;border-radius:50%;background:var(--layers);box-shadow:0 0 100px var(--orb-glow),inset -15px -20px 70px #02051b7d;border:1px solid #cddfff8c}
-.fly-globe{position:fixed;z-index:27;pointer-events:none}
-@media(max-width:560px){.solar-top{padding:10px}.solar-top>span{display:none}.orbit-map{min-height:330px}.orbit-point span{font-size:9px}.orbit-footer{padding-bottom:12px}.world-information{padding-bottom:20px}.cutaway-orb{left:50%;top:36%;width:min(80vw,46vh)}}
-@media(prefers-reduced-motion:reduce){#solar.solar-arrival,#world-photo.scene-change,#world-clouds.scene-change,#world-cutaway.scene-change,.cloud-bands{animation:none}body.solar-open #sky{transition:none}}
+#solar-launch{display:block;margin:20px auto 0;font-size:10px;letter-spacing:2px;border-color:#ffffff30;padding:13px 20px;background:#ffffff06}
+body.solar-open>main,body.solar-open>#sky,body.solar-open>#back,body.solar-open>#zoom-controls{visibility:hidden}
+#solar-view{position:fixed;inset:0;z-index:50;background:#02050e;color:#edf3ff;font-family:Arial,sans-serif}
+#solar-view[hidden],#solar-view [hidden]{display:none!important}
+#solar-stage{position:absolute;inset:0}#solar-stage canvas{position:static;display:block;width:100%;height:100%;touch-action:none;cursor:grab}#solar-stage canvas:active{cursor:grabbing}
+#solar-view button{font-family:inherit;cursor:pointer;border:1px solid #b6d4ff28;background:#101827a6;backdrop-filter:blur(16px);color:#e5edff;padding:11px 15px;border-radius:24px;font-size:10px;letter-spacing:1.2px}
+#solar-view button:hover,#solar-view button[aria-pressed=true]{background:#b5d3ff24;border-color:#b5d3ff80;color:white}#solar-view button:focus-visible{outline:2px solid #b8d6ff;outline-offset:4px}
+.solar-header{position:absolute;top:26px;left:30px;right:30px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;gap:16px}.solar-header>*{pointer-events:auto}.solar-header>div{text-align:center}.solar-eyebrow{font-size:9px;letter-spacing:4px;color:#91a1bc}.solar-header h2{font-size:23px;font-weight:400;letter-spacing:1px;margin:9px 0}
+#solar-status{position:absolute;top:110px;left:50%;transform:translateX(-50%);font-size:12px;color:#ffd6a5}
+#solar-labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}#solar-labels .solar-label{position:absolute;left:0;top:0;pointer-events:auto;padding:5px 9px;background:#02050e60;border:0;font-size:10px;letter-spacing:.6px;text-transform:none;color:#c1cee4}
+.solar-tools{position:absolute;right:28px;top:50%;display:flex;flex-direction:column;gap:8px;transform:translateY(-50%)}#solar-in,#solar-out{font-size:22px!important;padding:8px 14px!important}#solar-home{font-size:8px!important;max-width:65px;line-height:1.5}
+.solar-footer{position:absolute;bottom:20px;left:24px;right:24px;display:block;text-align:center;padding:0}.solar-footer p{font-size:11px;letter-spacing:.4px;color:#a3b1c9;margin:0 0 14px}#planet-picker{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}#planet-picker button{padding:9px 13px;font-size:10px;letter-spacing:.4px}.solar-notes{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:9px;letter-spacing:.2px;color:#78869e}.solar-notes a{color:#8d9db7;text-decoration:none}
+#solar-view.detail #solar-stage{bottom:285px;top:95px}#planet-card{position:absolute;bottom:141px;left:50%;transform:translateX(-50%);width:min(520px,calc(100% - 50px));text-align:center;pointer-events:none}#planet-type{font-size:9px;letter-spacing:2px;color:#9caec9;text-transform:uppercase}#planet-name{margin:6px 0 9px;font-size:29px;font-weight:400;letter-spacing:1px}#planet-description{font-size:12px;line-height:1.6;color:#c0cbdc;margin:0}.planet-fact{font-size:11px;line-height:1.6;margin:11px 0 6px;color:#dae7f9}.planet-fact span:first-child{font-size:9px;letter-spacing:1.3px;color:#c4a876;display:block;margin-bottom:3px}#planet-source{font-size:10px;color:#8dabc7;pointer-events:auto;text-decoration:none}
+@media(max-width:650px){.solar-header{top:16px;left:14px;right:14px;gap:8px}.solar-header h2{font-size:17px}.solar-eyebrow{font-size:7px;letter-spacing:2px}#solar-view .solar-header button{font-size:8px;padding:10px}.solar-tools{right:10px}.solar-footer{left:12px;right:12px;bottom:13px}.solar-notes{font-size:8px;gap:5px}#planet-picker{gap:5px}#planet-picker button{font-size:9px;padding:7px 10px}.solar-footer p{font-size:9px;margin-bottom:10px}#solar-view.detail #solar-stage{top:85px;bottom:325px}#planet-card{bottom:160px;width:calc(100% - 36px)}#planet-description{font-size:11px}#planet-name{font-size:24px}.planet-fact{font-size:10px}}
+@media(max-height:650px) and (min-width:651px){#solar-view.detail #solar-stage{right:40%;bottom:110px;top:80px}#planet-card{left:auto;right:5%;top:50%;bottom:auto;transform:translateY(-50%);width:32%}}
+
+#solar-labels .solar-label{transition:background .2s,color .2s}#planet-picker{margin-top:0}#solar-view p{font-family:Arial,sans-serif}.solar-header{z-index:2}.solar-tools,.solar-footer,#planet-card{z-index:2}
+
+/* The original galaxy remains visible throughout the arrival flight. */
+body.solar-open>#sky{visibility:visible}
+#solar-view{background:transparent}
+#solar-view.detail{background:#02050e}
+body.solar-arriving #solar-stage{pointer-events:none}
+body.solar-arriving .solar-header>div,body.solar-arriving .solar-tools,body.solar-arriving .solar-footer,body.solar-arriving #solar-labels{visibility:hidden;pointer-events:none}

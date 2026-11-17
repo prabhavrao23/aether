@@ -1,41 +1,59 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ÆTHER — A celestial reverie</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="solar.css"><canvas id="sky" aria-label="Astronomical star field with luminous stellar surfaces"></canvas><button id="back" aria-label="Return to main screen">← BACK</button><div id="zoom-controls"><button id="whole">− WHOLE GALAXY</button><button id="return-constellation">GO BACK TO CONSTELLATION ↗</button></div><dialog id="preferences-dialog"><h2>Make it yours.</h2><div class="settings"><label>YOUR SOUNDTRACK<label class="upload" for="track">＋ Choose MP4 or audio</label><input id="track" type="file" accept="video/mp4,audio/*"><span id="music-status" role="status">Default soundtrack ready</span></label></div><nav aria-label="Choose a celestial atmosphere"><button class="active" data-mode="0">REVERIE</button><button data-mode="1">AURORA</button><button data-mode="2">SOLSTICE</button></nav><button id="close-preferences">DONE</button></dialog><dialog id="lesson"><h2>Welcome to the Milky Way</h2><p>Our galaxy is a huge family of stars, gas, and dust. Its spiral arms curl around a bright central bar.</p><p>Drag to orbit, scroll to fly closer, and hold Shift while dragging to slide sideways.</p><p>This is an artistic 3D model. Each light represents a star; sizes, spacing, and motion are exaggerated so we can explore them.</p><p>Constellations are patterns we see from Earth. These patterns are embedded in this model as a learning aid. Their placements and depths are illustrative, not measured locations in the Milky Way.</p><a href="https://science.nasa.gov/resource/the-milky-way-galaxy/" target="_blank" rel="noopener">Explore NASA’s Milky Way guide ↗</a><br><button id="close-lesson">LET’S EXPLORE</button></dialog><audio id="music" src="assets/audio/soundtrack.mp4" preload="metadata" loop></audio><main><header><div class="brand">ÆTHER</div><button id="sound" aria-pressed="true">♪ SOUND ON</button></header><section class="center fade"><h1>A little infinity.</h1><p id="poem">Choose a constellation. Explore the stars.</p><div class="settings"><label>CONSTELLATION<select id="constellation"><option value="">Explore freely</option><option value="And">Andromeda</option><option value="Ant">Antlia</option><option value="Aps">Apus</option><option value="Aqr">Aquarius</option><option value="Aql">Aquila</option><option value="Ara">Ara</option><option value="Ari">Aries</option><option value="Aur">Auriga</option><option value="Boo">Boötes</option><option value="Cae">Caelum</option><option value="Cam">Camelopardalis</option><option value="Cnc">Cancer</option><option value="CVn">Canes Venatici</option><option value="CMa">Canis Major</option><option value="CMi">Canis Minor</option><option value="Cap">Capricornus</option><option value="Car">Carina</option><option value="Cas">Cassiopeia</option><option value="Cen">Centaurus</option><option value="Cep">Cepheus</option><option value="Cet">Cetus</option><option value="Cha">Chamaeleon</option><option value="Cir">Circinus</option><option value="Col">Columba</option><option value="Com">Coma Berenices</option><option value="CrA">Corona Austrina</option><option value="CrB">Corona Borealis</option><option value="Crv">Corvus</option><option value="Crt">Crater</option><option value="Cru">Crux</option><option value="Cyg">Cygnus</option><option value="Del">Delphinus</option><option value="Dor">Dorado</option><option value="Dra">Draco</option><option value="Equ">Equuleus</option><option value="Eri">Eridanus</option><option value="For">Fornax</option><option value="Gem">Gemini</option><option value="Gru">Grus</option><option value="Her">Hercules</option><option value="Hor">Horologium</option><option value="Hya">Hydra</option><option value="Hyi">Hydrus</option><option value="Ind">Indus</option><option value="Lac">Lacerta</option><option value="Leo">Leo</option><option value="LMi">Leo Minor</option><option value="Lep">Lepus</option><option value="Lib">Libra</option><option value="Lup">Lupus</option><option value="Lyn">Lynx</option><option value="Lyr">Lyra</option><option value="Men">Mensa</option><option value="Mic">Microscopium</option><option value="Mon">Monoceros</option><option value="Mus">Musca</option><option value="Nor">Norma</option><option value="Oct">Octans</option><option value="Oph">Ophiuchus</option><option value="Ori">Orion</option><option value="Pav">Pavo</option><option value="Peg">Pegasus</option><option value="Per">Perseus</option><option value="Phe">Phoenix</option><option value="Pic">Pictor</option><option value="Psc">Pisces</option><option value="PsA">Piscis Austrinus</option><option value="Pup">Puppis</option><option value="Pyx">Pyxis</option><option value="Ret">Reticulum</option><option value="Sge">Sagitta</option><option value="Sgr">Sagittarius</option><option value="Sco">Scorpius</option><option value="Scl">Sculptor</option><option value="Sct">Scutum</option><option value="Ser">Serpens</option><option value="Sex">Sextans</option><option value="Tau">Taurus</option><option value="Tel">Telescopium</option><option value="Tri">Triangulum</option><option value="TrA">Triangulum Australe</option><option value="Tuc">Tucana</option><option value="UMa">Ursa Major</option><option value="UMi">Ursa Minor</option><option value="Vel">Vela</option><option value="Vir">Virgo</option><option value="Vol">Volans</option><option value="Vul">Vulpecula</option></select></label></div><button id="go" style="margin-top:12px;padding:16px 48px">GO ↗</button><button id="solar-launch" class="solar-launch">View the Solar System <span aria-hidden="true">↗</span></button></section><footer><button id="preferences">SETTINGS</button><button id="pause" aria-pressed="false">PAUSE THE COSMOS &nbsp; Ⅱ</button><button id="learn">ABOUT OUR GALAXY</button></footer></main><section id="solar" aria-label="Solar System explorer" hidden>
-  <header class="solar-top">
-    <button id="solar-back">← Galaxy</button>
-    <span>ÆTHER <span class="solar-divider">/</span> Solar System</span>
-    <button id="solar-sound" aria-pressed="true">♪ Sound on</button>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prabhav Rao</title>
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
+</head>
+<body>
+<main class="stage">
+  <header>
+    <h1>prabhav rao</h1>
+    <nav aria-label="Personal links">
+      <a href="https://www.linkedin.com/in/prabhav-rao/"><b aria-hidden="true">in</b> LinkedIn</a>
+      <a href="https://github.com/prabhavrao23?tab=repositories">GitHub ↗</a>
+      <a href="portfolio.html#about">About Me</a>
+    </nav>
   </header>
-  <div id="orbit-view" class="solar-orbit-view">
-    <div class="solar-intro">
-      <p class="solar-eyebrow">THE MILKY WAY · OUR NEIGHBORHOOD</p>
-      <h2 id="orbit-title" tabindex="-1">The Solar System</h2>
-      <p>Select a world to fly closer.</p>
-    </div>
-    <div id="orbit-map" class="orbit-map" role="group" aria-label="Animated map of the Solar System"></div>
-    <div class="orbit-footer">
-      <div id="world-list" aria-label="Choose a destination"></div>
-      <div class="orbit-controls">
-        <button id="orbit-pause" aria-pressed="false">Pause orbits</button>
-        <label>Speed <select id="orbit-speed"><option value="8">8 days / sec</option><option value="35" selected>35 days / sec</option><option value="180">180 days / sec</option></select></label>
-        <span>Simulation · sizes and distances exaggerated</span>
-      </div>
-    </div>
-  </div>
-  <article id="world-view" hidden>
-    <div id="world-scene" aria-hidden="true">
-      <img id="world-photo" alt="">
-      <div id="world-clouds"></div>
-      <div id="world-cutaway"></div>
-    </div>
-    <div class="world-information">
-      <p class="solar-eyebrow" id="world-type"></p>
-      <h2 id="world-title" tabindex="-1"></h2>
-      <p id="world-description"></p>
-      <ul id="world-layers" hidden></ul>
-      <div id="world-steps" aria-label="Choose a view"></div>
-      <a id="world-credit" target="_blank" rel="noopener"></a>
-    </div>
-  </article>
-</section>
-
-<script src="app.js"></script>
-<script src="solar.js"></script></html>
+  <svg class="surf" viewBox="0 0 400 400" role="img" aria-label="Cartoon of Prabhav riding a small wave">
+    <g class="wave" fill="none" stroke="#242424" stroke-width="4" stroke-linecap="round">
+      <path d="M32 337c54 9 67-36 111-33 22 1 41 22 73 25 39 4 79-29 146-13"/>
+      <path d="M73 355c42-4 55-26 81-23 25 2 42 20 75 20 28 0 44-13 69-18M141 373c29-12 52 4 73 4 19 0 39-7 55-13" opacity=".42"/>
+    </g>
+    <g class="rider" stroke="#191919" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <g transform="translate(400 0) scale(-1 1)">
+      <!-- Board nose and anatomical left foot are on the viewer’s right. -->
+      <path fill="#187b85" d="M39 295c49-16 118-11 185 4 53 12 91 23 132 28-30 22-89 22-156 10C120 323 69 307 39 295Z"/>
+      <path fill="#6dc5cb" stroke="none" d="M48 295c61-8 119-3 176 10 43 10 89 20 119 22-46 12-82 10-141-2Z"/>
+      <path fill="#f9d88c" stroke="none" d="m110 290 15 1 13 23-15-4Zm23 2 7 1 13 25-7-2Z"/>
+      <path fill="none" stroke-width="2" d="M52 296c90-6 196 43 290 33"/>
+      <path fill="#dc9a73" d="M225 252l22-4 13 43 4 22 8 4q6 8-2 13l-23 1q-9-3-7-10l3-12-7-26Z"/>
+      <path fill="#dc9a73" d="m152 241 23 3-13 34-5 20 6 7q4 7-4 11l-24-1q-8-3-5-10l9-9 4-25Z"/>
+      <path fill="none" stroke-width="1.6" d="M134 303l-2 5m8-4-2 6m8-4-2 6m98 8v7m6-7v7m6-7v6"/>
+      <path fill="#9eca3b" d="M171 199q27 10 52 0l29 49q-13 13-34 14l-21-32-17 25q-22-2-35-14Z"/>
+      <path fill="#6e9725" stroke="none" d="M197 215l24 33q14 1 24-6l4 5q-12 11-29 12l-23-33-18 26-8-2Z"/>
+      <path fill="none" stroke="#e1ed9c" stroke-width="2.5" d="M171 208q25 9 52 0"/>
+      <path fill="#dc9a73" d="M179 147q18 11 37 0c23 4 42 20 60 24l22-6 10-9q7-3 7 3l-7 9 13-3q7 0 5 6l-20 11c-33 10-56 3-76-9l-8 27q-25 12-51 0l-7-27c-23 13-49 18-77 8l-17-10q-5-7 2-8l12 5-6-9q-2-7 5-5l15 13 16 4c22-3 42-19 65-24Z"/>
+      <path fill="none" stroke-width="2" d="M176 157q20 16 41 0m-42 19q10 5 18 1m8 0q9 4 18-1m-23 13v5"/>
+      <g class="head"><g transform="translate(392 0) scale(-1 1)">
+        <path fill="#dc9a73" d="m184 129-4 25q12 13 32 2l-5-24Z"/>
+        <path fill="#dc9a73" d="M156 85c3-26 29-40 56-30 15 5 23 20 25 37l11 15q3 5-3 6l-7 1-3 14q-6 17-28 18-27 0-43-24-14-15-8-37Z"/>
+        <path fill="#191919" d="M157 111c-16-6-19-23-14-39-1-18 10-34 24-38 9-13 24-15 36-9 17-3 34 9 39 24l8 12-16-1 7 15-18-8 4 13c-13-3-22-12-28-20-4 13-15 24-29 31l-1 20Z"/>
+        <path fill="none" stroke="#5e5051" stroke-width="2" d="M151 73q8-21 24-29m-14 26q12-10 22-28m21-5q22 4 32 17"/>
+        <path fill="#dc9a73" stroke-width="3" d="M174 104c-12-14-24 0-15 13q7 8 16 3"/>
+        <path fill="none" stroke-width="2.5" d="M214 91q9-4 16 0m-7 30q7 4 12-1"/>
+        <g class="eyes" fill="#191919" stroke="none"><ellipse cx="225" cy="100" rx="3.2" ry="4.1"/></g>
+        <circle cx="167" cy="119" r="3" fill="#fff" stroke-width="2"/>
+      </g></g>
+      </g>
+    </g>
+  </svg>
+  <a class="enter" href="aether.html" aria-label="Enter my imagination">
+    <svg viewBox="0 0 32 42" width="31" height="41" aria-hidden="true"><rect x="3" y="2" width="26" height="38" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M6 5h20v32H6z"/><circle cx="22" cy="21" r="1.6" fill="#eeeeee"/></svg>
+    <span>Enter my imagination</span>
+  </a>
+</main>
+</body>
+</html>
